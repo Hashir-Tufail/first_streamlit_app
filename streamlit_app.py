@@ -1,4 +1,4 @@
-import streamlit
+ import streamlit
 import pandas
 import requests
 import snowflake.connector
@@ -66,7 +66,7 @@ def insert_row_snowflake(new_fruit):
 try:
   add_my_fruit = streamlit.text_input('What fruit would you like to add?')
   if not add_my_fruit:
-    streamlit.error("Please select a fruit to get information.")
+    streamlit.error("Please enter the name of fruit to be added to the list.")
   else:
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
     add_my_fruit_to_sflk = insert_row_snowflake(add_my_fruit)
